@@ -1,0 +1,344 @@
+/* font */
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* 레이아웃 */
+.all {
+  font-family: "Poppins";
+}
+
+.main {
+  height: 1000px;
+}
+
+.main,
+.abandoned,
+.shelter,
+.help,
+.happy {
+  padding-left: 156px;
+  padding-right: 156px;
+  padding-bottom: 300px;
+  padding-top: 120px;
+}
+
+/* Fade-in 효과 정의 */
+.shelter,
+.help,
+.happy {
+  opacity: 0; /* 초기 상태에서 숨김 */
+  transition: opacity 0.3s ease-in; /* 부드러운 전환 효과 */
+}
+
+.shelter.visible,
+.help.visible,
+.happy.visible {
+  opacity: 1; /* visible 클래스를 추가하면 보이도록 설정 */
+}
+
+/* 레이아웃 컬러 */
+.main,
+.abandoned,
+.help {
+  background-color: #1b1b1b;
+}
+
+.contents-a,
+.contents-b,
+.contents-c,
+.contents-d {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.shelter,
+.happy {
+  background-color: #ffffff;
+}
+
+/* 텍스트 */
+.abandonedmaintext,
+.sheltermaintext,
+.helpmaintext,
+.happymaintext {
+  font-size: 48px;
+  text-align: center;
+  padding-top: 268px;
+  padding-bottom: 260px;
+}
+
+p {
+  margin-bottom: 0.5em;
+  word-break: keep-all;
+}
+
+/* semitext */
+
+.abandonedtextsemi,
+.happytextsemi {
+  letter-spacing: -0.03em;
+  line-height: 1.7em;
+  text-indent: 1em;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.sheltertextsemi,
+.helptextsemi {
+  letter-spacing: -0.03em;
+  line-height: 36px;
+  text-indent: 1em;
+  margin-bottom: 1.3em;
+  width: 800px;
+  margin: 0 auto;
+}
+.abandonedtextsemi02,
+.happytextsemi02 {
+  letter-spacing: -0.03em;
+  line-height: 1.7em;
+  text-indent: 1em;
+}
+
+/* 텍스트 컬러 */
+.abandonedmaintext,
+.helpmaintext,
+.abandonedtextsemi,
+.helptextsemi {
+  color: #ffffff;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.sheltermaintext,
+.happymaintext {
+  color: #0cd59f;
+}
+
+.sheltertext {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  padding-bottom: 80px;
+  color: #0cd59f;
+}
+
+.happytext {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  padding-bottom: 40px;
+  color: #0cd59f;
+}
+
+.abandonedtext,
+.helptext {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  padding-bottom: 40px;
+  color: #fff0a3;
+}
+
+.happytextsemi {
+  font-size: 16px;
+  line-height: 150%;
+  color: #4d4d4d;
+}
+
+.sheltertextsemi {
+  font-size: 16px;
+  line-height: 150%;
+  color: #4d4d4d;
+  margin-top: 60px;
+}
+
+/* main img 인터랙션 */
+
+.main {
+  position: relative;
+  overflow: hidden; /* 이미지가 컨테이너를 넘치지 않도록 설정 */
+}
+
+.main-dog-black,
+.main-dog-hover {
+  width: 1200px; /* 이미지 너비 설정 */
+  position: absolute; /* 겹치게 하기 위해 절대 위치 설정 */
+  top: 150px; /* 상단에 배치 */
+  left: 0; /* 좌측에 배치 */
+  bottom: 500px;
+  transition: opacity 0.5s ease; /* 부드러운 전환 효과 */
+}
+
+/* 기본 이미지: 항상 보이도록 설정 */
+.main-dog-black {
+  opacity: 1; /* 기본 이미지는 보이게 */
+  z-index: 2; /* 기본 이미지가 항상 위에 있도록 설정 */
+}
+
+/* 교체할 이미지: 초기 상태는 숨김 */
+.main-dog-hover {
+  opacity: 0; /* 초기 상태에서는 보이지 않음 */
+  z-index: 1; /* 기본 이미지 아래에 위치 */
+}
+
+/* Hover 시 기본 이미지를 숨기고 교체할 이미지를 표시 */
+/* hover 상태를 이미지에 직접 적용 */
+.main-dog-black:hover {
+  opacity: 0; /* hover 시 기본 이미지를 숨김 */
+}
+
+.main-dog-black:hover + .main-dog-hover {
+  opacity: 1; /* hover 시 교체할 이미지를 보이게 함 */
+}
+/* img 기본 */
+
+.happy-dog-img,
+.shelter-dog-img,
+.help-dog-img {
+  width: 1000px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* abondoned 그래프 */
+
+#abondonedcontainer {
+  height: 600px; /* 높이를 원하는 만큼 증가 */
+  width: 100%; /* 전체 너비 사용 */
+  max-width: 800px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+  min-width: 310px;
+  max-width: 800px;
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ebebeb;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+  padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+  background: #2d2e30;
+}
+
+.highcharts-description {
+  margin: 0.3rem 10px;
+}
+
+/* shelter 그래프 */
+
+.highcharts-figure02 {
+  width: 100%; /* 화면 가로 최대 비율 */
+  max-width: 1200px; /* 최대 너비 제한 */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+#sheltercontainer {
+  height: 500px; /* 원하는 높이 */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ebebeb;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+  padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+
+.highcharts-description {
+  margin: 0.3rem 10px;
+}
